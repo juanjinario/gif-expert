@@ -1,10 +1,11 @@
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import { useState } from "react";
 import AddCategory from "../AddCategory/AddCategory";
+import GifGrid from "../GifGrid/GifGrid";
 import styles from "./GifExpertApp.module.css";
 
 const GifExpertApp = () => {
-  const [categoriesList, setCategoriesList] = useState(['One Punch', 'Samurai X', 'Dragon Ball']);
+  const [categoriesList, setCategoriesList] = useState(['One Punch']);
   return (
     <>
       <h2 className={styles['page-title']} data-testid="GifExpertApp">
@@ -12,19 +13,17 @@ const GifExpertApp = () => {
       </h2>
       <hr/>
       <AddCategory setCategoriesList={ setCategoriesList }></AddCategory>
-      <ol>
         {
           categoriesList.map((category, index) => {
-            return <li key={ category }>{ category }</li>;
+            return <GifGrid key={ category } category={ category }>{ category }</GifGrid>;
           })
         }
-      </ol>
     </>
   ); 
 }
 
-GifExpertApp.propTypes = {};
+// GifExpertApp.propTypes = {};
 
-GifExpertApp.defaultProps = {};
+// GifExpertApp.defaultProps = {};
 
 export default GifExpertApp;

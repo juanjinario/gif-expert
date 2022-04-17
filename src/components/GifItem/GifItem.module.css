@@ -1,0 +1,13 @@
+.gift-item-card {
+    box-shadow: 1px 5px 8px 5px rgba(110, 110, 110,0.3);
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+.gif-image {
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+}
+.gif-title {
+    padding: 0.5rem 1rem;
+}
