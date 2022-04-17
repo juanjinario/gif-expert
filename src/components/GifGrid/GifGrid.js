@@ -14,7 +14,7 @@ const GifGrid = ({ category }) => {
       </h3>
       <div className={styles['cards-grid']}>
       {
-        loading && <p>Cargando...</p>
+        loading && <p className="animate__animated animate__fadeIn">Cargando...</p>
       }
       {
         imagesList.map(image => {
