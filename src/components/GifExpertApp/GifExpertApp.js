@@ -1,20 +1,17 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
+import AddCategory from "../AddCategory/AddCategory";
 import styles from "./GifExpertApp.module.css";
 
 const GifExpertApp = () => {
   const [categoriesList, setCategoriesList] = useState(['One Punch', 'Samurai X', 'Dragon Ball']);
-  const handleAddCategory = () => {
-    /// setCategoriesList([...categoriesList, 'new Category']);
-    setCategoriesList(cats => [...cats, 'New Cateroy']);
-  };
   return (
     <>
       <h2 className={styles['page-title']} data-testid="GifExpertApp">
         GifExpertApp Component
       </h2>
       <hr/>
-      <button onClick={ handleAddCategory }>Agregar Categoría</button>
+      <AddCategory setCategoriesList={ setCategoriesList }></AddCategory>
       <ol>
         {
           categoriesList.map((category, index) => {
