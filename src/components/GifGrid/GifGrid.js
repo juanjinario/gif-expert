@@ -14,7 +14,7 @@ const GifGrid = ({ category }) => {
       </h3>
       <div className={styles['cards-grid']} data-testid="GifGridWrapper">
       {
-        loading && <p className="animate__animated animate__fadeIn">Cargando...</p>
+        loading && <p className="animate__animated animate__fadeIn" data-testid="GifGridLoading">Cargando...</p>
       }
       {
         imagesList.map(image => {
