@@ -9,10 +9,10 @@ const GifGrid = ({ category }) => {
   
   return (
     <>
-      <h3 className={styles.GifGrid} data-testid="GifGrid">
+      <h3 className={styles.GifGrid} data-testid="GifGridTitle">
         { category }
       </h3>
-      <div className={styles['cards-grid']}>
+      <div className={styles['cards-grid']} data-testid="GifGridWrapper">
       {
         loading && <p className="animate__animated animate__fadeIn">Cargando...</p>
       }

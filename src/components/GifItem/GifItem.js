@@ -4,8 +4,8 @@ import styles from './GifItem.module.css';
 
 const GifItem = ({ title, id, url }) => (
   <div className={styles['gift-item-card'] + ' animate__animated animate__fadeIn'} data-testid="GifItem">
-    <img className={styles['gif-image']} src={ url } alt={ title }></img>
-    <p className={styles['gif-title']}>{ title }</p>
+    <img alt={ title } className={styles['gif-image']} data-testid="GifItemImg" src={ url }></img>
+    <p className={styles['gif-title']} data-testid="GifItemTitle">{ title }</p>
   </div>
 );
 

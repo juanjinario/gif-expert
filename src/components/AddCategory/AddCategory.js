@@ -9,15 +9,17 @@ const AddCategory = ({ setCategoriesList }) => {
   }
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(inputValue, 'was called');
     if (inputValue.trim().length > 2) {
       setCategoriesList(cats => [inputValue, ...cats]);
       setinputValue('');
     }
   }
   return (
-    <form onSubmit={ handleSubmit }>
+    <form data-testid="categoryForm" onSubmit={ handleSubmit }>
       <input 
-        className={styles['input-txt']} 
+        className={styles['input-txt']}
+        data-testid="categoryInput"
         type="text" 
         value={ inputValue }
         onChange={ handleInput }  
