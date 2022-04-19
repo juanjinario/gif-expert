@@ -19,7 +19,7 @@ describe('<AddCategory />', () => {
     expect(addCategory).toBeInTheDocument();
   });
 
-  test('it should call to setCategoriesList if user digit a category', async () => {
+  test('it should call to setCategoriesList if user digit a category and refresh input text', async () => {
     initRender();
     const categoryForm = screen.getByTestId('categoryForm');
     const categoryInput = screen.getByTestId('categoryInput');
@@ -27,5 +27,7 @@ describe('<AddCategory />', () => {
     // userEvent.type(input, "abc{enter}");
     await fireEvent.submit(categoryForm);
     expect(setCategoriesList).toHaveBeenCalled();
+    expect(categoryInput.value).toBe('');
+
   });
 });
