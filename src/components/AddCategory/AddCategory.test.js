@@ -26,7 +26,7 @@ describe('<AddCategory />', () => {
     userEvent.type(categoryInput, "Mojica");
     // userEvent.type(input, "abc{enter}");
     await fireEvent.submit(categoryForm);
-    expect(setCategoriesList).toHaveBeenCalled();
+    expect(setCategoriesList).toHaveBeenCalledWith( expect.any(Function) );
     expect(categoryInput.value).toBe('');
 
   });
